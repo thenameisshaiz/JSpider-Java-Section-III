@@ -35,19 +35,19 @@ public class Student implements Comparable<Student>{
         this.marks = marks;
     }
 
-//    @Override
-//    public int compareTo(Student s1) {
-////        return this.rollno - s1.rollno;
+    @Override
+    public int compareTo(Student s1) {
+        return this.rollno - s1.rollno;
 //        int res = (int)(this.marks - s1.marks);
 //        return res;
-//    }
-
-    @Override
-    public int compareTo(Student s1){
-        String name1 = s1.name;
-        String name2 = this.name;
-        return name2.compareTo(name1);
     }
+
+//    @Override
+//    public int compareTo(Student s1){
+//        String name1 = s1.name;
+//        String name2 = this.name;
+//        return name2.compareTo(name1);
+//    }
 
     @Override
     public String toString() {
