@@ -37,7 +37,11 @@ public class ArrayListDemo {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the index: ");
         int index = sc.nextInt();
-        System.out.println(ar1.get(index));
+        if(index <= ar1.size()){
+            System.out.println(ar1.get(index));
+        }else{
+            System.out.println("Enter the VALID index.");
+        }
     }
 
 //    Deleting the details of the employee
