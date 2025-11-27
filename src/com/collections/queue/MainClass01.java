@@ -15,9 +15,11 @@ public class MainClass01 {
         System.out.println("Size: "+pq1.size());
         System.out.println("isEmpty: "+pq1.isEmpty());
 
-//        while(pq1.size()!=0){
-//            System.out.println(pq1.poll());
-//        }
+/*
+        while(pq1.size()!=0){
+            System.out.println(pq1.poll());
+        }
+*/
 
         while(pq1.isEmpty()==false){
             System.out.println(pq1.poll());
