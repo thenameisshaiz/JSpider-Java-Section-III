@@ -1,5 +1,7 @@
 package com.collections.implementations;
 
+import java.util.Objects;
+
 public class Employee {
     private int empid;
     private String ename;
@@ -53,5 +55,31 @@ public class Employee {
                 ", salary=" + salary +
                 ", job='" + job + '\'' +
                 '}';
+    }
+
+//    @Override
+//    public boolean equals(Object o) {
+//        if (o == null || getClass() != o.getClass()) return false;
+//        Employee employee = (Employee) o;
+//        return empid == employee.empid && Double.compare(salary, employee.salary) == 0 && Objects.equals(ename, employee.ename) && Objects.equals(job, employee.job);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(empid, ename, salary, job);
+//    }
+
+    @Override
+    public boolean equals(Object o) {
+        boolean res = false;
+        if (this.empid == getEmpid()) {
+            res = empid == getEmpid();
+        }
+        return res;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(empid);
     }
 }

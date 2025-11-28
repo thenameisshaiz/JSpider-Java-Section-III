@@ -3,10 +3,18 @@ package com.collections.queue;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
-class DescOrder implements Comparator<String> {
+class StudentRollNoComparator implements Comparator<Student> {
     @Override
-    public int compare(String s1, String s2){
-        return s2.compareTo(s1);
+    public int compare(Student s1, Student s2) {
+        // LOGIC:
+        // If we want Descending order: return s2 - s1
+        // If we want Ascending order: return s1 - s2
+
+        // Comparing primitive int types:
+        return s2.getRollno() - s1.getRollno();
+
+        // Note: If you wanted to sort by Name (String), you would use:
+        // return s2.getName().compareTo(s1.getName());
     }
 }
 
@@ -14,10 +22,13 @@ public class MainClass02 {
     public static void main(String[] args) {
 
 
-       DescOrder d1 = new DescOrder();
-       Comparator<Student> descOrder = (s1, s2) -> s2.compareTo(s1);
+        // 2. Instantiate your custom Comparator
+        StudentRollNoComparator myComparator = new StudentRollNoComparator();
 
-        PriorityQueue<Student> pr1 = new PriorityQueue<>(descOrder);
+        // 3. Pass the comparator to the PriorityQueue constructor
+        PriorityQueue<Student> pr1 = new PriorityQueue<>(myComparator);
+
+//        PriorityQueue<Student> pr1 = new PriorityQueue<>(myComparator);
 
         Student s1 = new Student(101, "AAA", 76);
         Student s2 = new Student(104, "BBB", 76);
